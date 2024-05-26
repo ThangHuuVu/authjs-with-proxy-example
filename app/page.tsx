@@ -3,6 +3,7 @@ import CustomLink from "@/components/CustomLink";
 import { LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Index() {
   return (
@@ -35,7 +36,9 @@ export default function Index() {
           <LogIn className="mr-2 h-5 w-5" />
           Sign In with Auth.js
         </Link>
-        <IndexClient />
+        <Suspense fallback={<div />}>
+          <IndexClient />
+        </Suspense>
       </div>
     </div>
   );
